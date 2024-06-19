@@ -1,4 +1,4 @@
-# Basic Photo Editor
+# Simple Photo Editor
 
 ## Overview
 
