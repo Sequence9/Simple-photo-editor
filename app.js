@@ -29,9 +29,10 @@ function loadImage(event) {
 
 function saveImage() {
     const format = document.getElementById('file-format').value;
+    const mimeType = format === 'jpg' ? 'image/jpeg' : 'image/png';
     const link = document.createElement('a');
     link.download = `edited-image.${format}`;
-    link.href = canvas.toDataURL(`image/${format}`);
+    link.href = canvas.toDataURL(mimeType);
     link.click();
 }
 
