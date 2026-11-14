@@ -47,11 +47,15 @@ function applyFilter(filter) {
                 const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
                 data[i] = data[i + 1] = data[i + 2] = avg;
                 break;
-            case 'sepia':
-                data[i] = data[i] * 0.393 + data[i + 1] * 0.769 + data[i + 2] * 0.189;
-                data[i + 1] = data[i] * 0.349 + data[i + 1] * 0.686 + data[i + 2] * 0.168;
-                data[i + 2] = data[i] * 0.272 + data[i + 1] * 0.534 + data[i + 2] * 0.131;
+            case 'sepia': {
+                const red = data[i];
+                const green = data[i + 1];
+                const blue = data[i + 2];
+                data[i] = red * 0.393 + green * 0.769 + blue * 0.189;
+                data[i + 1] = red * 0.349 + green * 0.686 + blue * 0.168;
+                data[i + 2] = red * 0.272 + green * 0.534 + blue * 0.131;
                 break;
+            }
             case 'invert':
                 data[i] = 255 - data[i];
                 data[i + 1] = 255 - data[i + 1];
